@@ -10,7 +10,7 @@ public class MyArrayList<T extends Comparable<T>> {
 
     public MyArrayList(int capacity) {
         if (capacity <= 0) {
-            throw new IllegalArgumentException("capacity < 0: " + capacity);
+            throw new IllegalArgumentException("размер < 0: " + capacity);
         }
 
         this.capacity = capacity;
@@ -56,9 +56,7 @@ public class MyArrayList<T extends Comparable<T>> {
             list[i] = list[i + 1];
         }
         list[size - 1] = null;
-
         size--;
-
         return temp;
     }
 
@@ -88,13 +86,11 @@ public class MyArrayList<T extends Comparable<T>> {
         if (item == null) {
             return -1;
         }
-
         for (int i = 0; i < size; i++) {
             if (list[i].equals(item)) {
                 return i;
             }
         }
-
         return -1;
     }
 
@@ -116,6 +112,7 @@ public class MyArrayList<T extends Comparable<T>> {
         }
     }
 
+    // проверка по индексу
     private void checkIndex(int index) {
         if (index < 0 || index > size) {
             throw new IndexOutOfBoundsException("Индекс меньше 0 или больше размера массива. index : " + index);
@@ -146,7 +143,8 @@ public class MyArrayList<T extends Comparable<T>> {
         list[index2] = temp;
     }
 
-    // сортировка выбором. ЭффективностьО(n^2)
+    // Методы сортировок:
+    // сортировка выбором
     public void selectionSort() {
         for (int i = 0; i < size - 1; i++) {
             int iMin = i;

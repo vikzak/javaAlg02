@@ -2,9 +2,6 @@ package lesson02;
 
 import org.apache.commons.lang3.time.StopWatch;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Random;
 
 public class Lesson02 {
@@ -119,9 +116,7 @@ public class Lesson02 {
     private static long getTimeBubbleSort(MyArrayList<Integer> array) {
         StopWatch watch = new StopWatch();
         watch.start();
-
         array.bubbleSort();
-
         watch.stop();
         return watch.getTime();
     }
@@ -135,4 +130,5 @@ public class Lesson02 {
         }
         return generatedArray;
     }
+
 }
